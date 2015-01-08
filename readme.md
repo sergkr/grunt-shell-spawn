@@ -1,22 +1,13 @@
 ## sergkr/grunt-shell-spawn
 
+**UPDATE:** All of the fixes contained in this fork have been merged [upstream](https://github.com/cri5ti/grunt-shell-spawn) and included in version 0.3.1 of grunt-shell-spawn.  If you were previously using this fork in your projects, you should now be able to use grunt-shell-spawn directly (as long as you're using version 0.3.1 or later).
+
 A fork on [grunt-shell-spawn][1] with the following fixes:
 
 - Don't convert forward slashes to backslashes on Windows ([#12](https://github.com/cri5ti/grunt-shell-spawn/issues/12)).
 - Fix the broken `:kill` task to actually kill the process instead of orphaning it ([#14](https://github.com/cri5ti/grunt-shell-spawn/issues/14)), and add support for `:kill` on Windows.
     - Caveat: it is now required to explicitly use `:kill` to clean up any background processes you started, as they will otherwise continue running after grunt finishes.
 - Fix for capturing `stderr` ([#15](https://github.com/cri5ti/grunt-shell-spawn/issues/15)).
-
-These are currently opened up as pull requests in grunt-shell-spawn, but until they are merged, you can point your package.json directly at this repository:
-
-    "devDependencies": {
-        "grunt-shell-spawn": "sergkr/grunt-shell-spawn#master"
-    }
-
-Or you may consider using the following alternatives:
-
-- [grunt.util.spawn](http://gruntjs.com/api/grunt.util#grunt.util.spawn)
-- [ShellJS](https://github.com/arturadib/shelljs)
 
 -----
 
